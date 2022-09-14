@@ -1,2 +1,2 @@
-# Neuropixels_Auditory_Responses
+# Neuropixels Auditory Responses
 Lab Rotation Project performing Statistical Analysis on the responses of single and multi-units to auditory stimuli.
