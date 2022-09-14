@@ -5,6 +5,7 @@ Created on Thu Sep  9 16:44:46 2021
 @author: vankronp
 
 Modified by ertmana May 2022
+Modified by MarIniOnz July 2022
 
 reading Analog triggers from AP bin file and from Analog bin file
 
