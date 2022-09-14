@@ -18,43 +18,12 @@
 clc
 clear
 
-%% Add the repositories to your path
-
-addpath(genpath('\\charite.de\centren\Fakultaet\MFZ\NWFZ\AG-deHoz-Scratch\Kilosort3')) % path to kilosort folder
-addpath('\\charite.de\centren\Fakultaet\MFZ\NWFZ\AG-deHoz-Scratch\Kilosort3\npy-matlab-master\npy-matlab') % for converting to Phy
-addpath('\\charite.de\centren\Fakultaet\MFZ\NWFZ\AG-deHoz-Scratch\Kilosort3\spikes-master\visualization')
-addpath(genpath('\\charite.de\centren\Fakultaet\MFZ\NWFZ\AGdeHoz\Martin'))
-
 %% Get the directories and the recording parameters
 
 subject_rec = 609;
 imec = 0;
 
-if subject_rec==60900
-    direc.folder = "\\charite.de\\centren\\Fakultaet\\MFZ\\NWFZ\\AG-deHoz-Scratch\\Neuropixels\\15_10_2020\\GG_M609__g0_1_high_processed\\";
-    direc.date = "15_10_2020";
-    num_sequences = 18;
-    myKsDir = "\\charite.de\\centren\\Fakultaet\\MFZ\\NWFZ\\AG-deHoz-Scratch\\Neuropixels\\15_10_2020\\GG_M609__g0_1_high_processed\\GG_M609__g0_imec" +imec+"\\imec"+imec+"_ks2_orig";      
-elseif subject_rec==60930
-    direc.folder = "\\charite.de\\centren\\Fakultaet\\MFZ\\NWFZ\\AG-deHoz-Scratch\\Neuropixels\\15_10_2020\\GG_M609__g0_1_wide_processed\\";
-    direc.date = "15_10_2020";
-    num_sequences = 18;
-    myKsDir = "\\charite.de\\centren\\Fakultaet\\MFZ\\NWFZ\\AG-deHoz-Scratch\\Neuropixels\\15_10_2020\\GG_M609__g0_1_wide_processed\\GG_M609__g0_imec" +imec+"\\imec"+imec+"_ks2_orig";
-elseif subject_rec==61340
-    direc.folder = "\\charite.de\\centren\\Fakultaet\\MFZ\\NWFZ\\AG-deHoz-Scratch\\Neuropixels\\15_12_2020\\GG_M613_g0_t21,49\\catgt_GG_M613_g0\\";
-    direc.date = "15_12_2020";
-    num_sequences = 21;
-    % Sequences start at T24 and end at T49,
-    myKsDir = "\\charite.de\\centren\\Fakultaet\\MFZ\\NWFZ\\AG-deHoz-Scratch\\Neuropixels\\15_12_2020\\GG_M613_g0_t21,49\\catgt_GG_M613_g0\\GG_M613_g0_imec" +imec+"\\imec"+imec+"_ks2_orig";
-elseif subject_rec==61440
-    direc.folder = "\\charite.de\\centren\\Fakultaet\\MFZ\\NWFZ\\AG-deHoz-Scratch\\Neuropixels\\16_12_2020\\GG_M614_g0_t21,49\\catgt_GG_M614_g0\\";
-    direc.date = "16_12_2020";
-    num_sequences = 21;
-    % Sequences start at T24 and end at T49,
-    myKsDir = "\\charite.de\\centren\\Fakultaet\\MFZ\\NWFZ\\AG-deHoz-Scratch\\Neuropixels\\16_12_2020\\GG_M614_g0_t21,49\\catgt_GG_M614_g0\\GG_M614_g0_imec" +imec+"\\imec"+imec+"_ks2_orig";
-else
-    [direc, myKsDir, num_sequences] = filesForSubject(subject_rec, imec);
-end
+[direc, myKsDir, num_sequences] = filesForSubject(subject_rec, imec);
 
 % In case we use b, c sequences.
 if subject_rec>1000 && subject_rec<10000
