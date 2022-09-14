@@ -3,8 +3,10 @@
 Created on Thu Jun 16 15:50:38 2022
 
 @author: Recording PC
-"""
 
+Modified by MarIniOnz in July 2022
+
+"""
 
 def getTrigsMartin(binFullPath_AP, binFullPath_NI, soundnames, Alexandras_lengths, plotting):
     
